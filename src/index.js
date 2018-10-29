@@ -1,10 +1,30 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './App';
+import AuthorQuiz from './AuthorQuiz';
 import * as serviceWorker from './serviceWorker';
 
-ReactDOM.render(<App />, document.getElementById('root'));
+
+const authors = [
+    {
+        name: 'Mark Twain',
+        imageUrl: 'images/authors/marktwain.jpg',
+        imageSource: 'wikimedia Commons',
+        books: ['The adventure of Huckleberry Finn',
+        'life of the Mississippi',
+        'Roughing it']
+    }
+]
+
+const state = {
+    turnData: {
+        author: authors[0],
+        books: authors[0].books
+    }
+
+}
+
+ReactDOM.render(<AuthorQuiz {...state}/>, document.getElementById('root'));
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.
